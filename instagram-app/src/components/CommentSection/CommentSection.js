@@ -12,7 +12,7 @@ function CommentSection(props) {
                 />
             ))}
             <input type="text" placeholder="Add a comment..." />
-
+            <p>time here</p>
         </div>
     )
 }
