@@ -6,10 +6,12 @@ function CommentSection(props) {
         <div>
             {props.comments.map(comment => (
                 <Comment
-                    username={comment.username}
-                    text={comment.text} 
+                key={comment.id}    
+                username={comment.username}
+                text={comment.text} 
                 />
             ))}
+            <input type="text" placeholder="Add a comment..." />
 
         </div>
     )

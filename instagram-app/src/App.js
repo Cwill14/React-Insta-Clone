@@ -16,7 +16,7 @@ class App extends React.Component {
     return (
       <div>
         <SearchBar />
-        <PostContainer postData={this.state.data} />
+        <PostContainer key={this.state.data.id} postData={this.state.data} />
       </div>
     )
   }
