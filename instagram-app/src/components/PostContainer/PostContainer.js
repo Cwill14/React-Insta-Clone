@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import CommentSection from '../CommentSection/CommentSection.js';
 import './PostContainer.scss';
 import { FaRegHeart } from 'react-icons/fa';
+import { FaHeart } from 'react-icons/fa';
 import { FaRegComment } from 'react-icons/fa';
+
 
 
 class PostContainer extends React.Component {
@@ -27,7 +29,8 @@ class PostContainer extends React.Component {
                             <h2>{post.username}</h2>
                         </div>
                         <img className="main-img" src={post.imageUrl} alt="post" />
-                        <FaRegHeart />
+                        {/* <FaRegHeart onClick={this.toggleLike}/> */}
+                        {this.state.liked ? <FaHeart onClick={this.toggleLike} /> : <FaRegHeart onClick={this.toggleLike}/>}
                         <FaRegComment />
                         <p><b>{post.likes} likes</b></p>
                         <CommentSection comments={post.comments} />
