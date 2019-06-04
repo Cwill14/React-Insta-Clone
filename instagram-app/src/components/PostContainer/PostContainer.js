@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import CommentSection from '../CommentSection/CommentSection.js';
 import './PostContainer.scss';
-import { FaHeart } from 'react-icons/fa';
+import { FaRegHeart } from 'react-icons/fa';
+import { FaRegComment } from 'react-icons/fa';
+
 
 const PostContainer = props => {
     return (
@@ -14,8 +16,8 @@ const PostContainer = props => {
                         <h2>{post.username}</h2>
                     </div>
                     <img className="main-img" src={post.imageUrl} alt="post" />
-                    <div>like and comment icons</div>
-                    <FaHeart />
+                    <FaRegHeart />
+                    <FaRegComment />
                     <p><b>{post.likes} likes</b></p>
                     <CommentSection comments={post.comments} />
                 </div>
