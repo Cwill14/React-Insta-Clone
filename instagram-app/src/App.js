@@ -6,17 +6,22 @@ import './App.scss';
 
 
 class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
+  state = {
+    data: []
+  };
+
+  componentDidMount() {
+    this.setState({
       data: dummyData
-    };
+    })
   }
+
   render() {
+    console.log("object");
     return (
       <div>
         <SearchBar />
-        <PostContainer key={this.state.data.id} postData={this.state.data} />
+        <PostContainer postData={this.state.data} />
       </div>
     )
   }
