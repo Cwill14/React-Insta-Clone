@@ -6,24 +6,36 @@ import { FaRegHeart } from 'react-icons/fa';
 import { FaRegComment } from 'react-icons/fa';
 
 
-const PostContainer = props => {
-    return (
-        <div className="post-box">
-            {props.postData.map(post => (
-                <div key={post.id} className="post">
-                    <div className="post-header">
-                        <img className="thumbnail" src={post.thumbnailUrl} alt="user thumbnail"/>                    
-                        <h2>{post.username}</h2>
+class PostContainer extends React.Component {
+    state = {
+        liked: false
+    }
+    
+    toggleLike = () => {
+        this.setState({
+            liked: !this.state.liked
+        })
+    }
+
+    render() {
+        return (
+            <div className="post-box">
+                {this.props.postData.map(post => (
+                    <div key={post.id} className="post">
+                        <div className="post-header">
+                            <img className="thumbnail" src={post.thumbnailUrl} alt="user thumbnail"/>                    
+                            <h2>{post.username}</h2>
+                        </div>
+                        <img className="main-img" src={post.imageUrl} alt="post" />
+                        <FaRegHeart />
+                        <FaRegComment />
+                        <p><b>{post.likes} likes</b></p>
+                        <CommentSection comments={post.comments} />
                     </div>
-                    <img className="main-img" src={post.imageUrl} alt="post" />
-                    <FaRegHeart />
-                    <FaRegComment />
-                    <p><b>{post.likes} likes</b></p>
-                    <CommentSection comments={post.comments} />
-                </div>
-            ))}
-        </div>    
-    )
+                ))}
+            </div>    
+        )
+    }
 }
 
 PostContainer.propTypes = {
