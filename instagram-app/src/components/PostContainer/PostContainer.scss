@@ -1,20 +1,37 @@
+@import '../../mixins';
+
 .post-box {
-    border: 1px dashed green;
+    // border: 1px dashed green;
+    font-family: 'Roboto', sans-serif;
     .post {
-        margin: 20px 0;
+        margin-bottom: 2rem;
+        // @include test-border;
+        border-top: 1px solid black;
+        padding: 1.5rem 0.5rem 0.5rem 0.5rem;
+        .post-header {
+            @include flex(row, nowrap);
+            // @include test-border;
+            align-items: center;
+            .thumbnail {
+                height: 3rem;
+                width: 3rem;
+                margin-right: 1rem;
+                border-radius: 50%;
+            }
+        }
         img {
             max-width: 100%;
             height: auto;
-            .thumbnail {
-                height: 50%;
-                width: 50%;
-                border-radius: 33%;
-            }
+            
         }
-        .post-header {
-            display: flex;
-            // @include flex(row, nowrap);
+        // .main-img {
+        //     margin: 1.5rem 0 1rem 0;
+        // }
+        .bottom-icons {
+            margin: 1rem 0.5rem 0 0.5rem;
+            transform: scale(1.5);
         }
+        
     }
     
 }

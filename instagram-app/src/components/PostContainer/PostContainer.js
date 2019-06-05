@@ -30,9 +30,8 @@ class PostContainer extends React.Component {
                             <h2>{post.username}</h2>
                         </div>
                         <img className="main-img" src={post.imageUrl} alt="post" />
-                        {/* <FaRegHeart onClick={this.toggleLike}/> */}
-                        {this.state.liked ? <FaHeart onClick={this.toggleLike} /> : <FaRegHeart onClick={this.toggleLike}/>}
-                        <FaRegComment />
+                        {this.state.liked ? <FaHeart onClick={this.toggleLike} className="bottom-icons" /> : <FaRegHeart onClick={this.toggleLike} className="bottom-icons" />}
+                        <FaRegComment className="bottom-icons"/>
                         <p><b>{post.likes} likes</b></p>
                         <CommentSection comments={post.comments} />
                     </div>

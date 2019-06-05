@@ -1,5 +1,9 @@
 @import './reset.scss';
 @import './mixins.scss';
+@import './components/CommentSection/CommentSection.scss';
+@import './components/PostContainer/PostContainer.scss';
+@import './components/SearchBar/SearchBar.scss';
+
 
 body {
     // font-size: 62.5%;

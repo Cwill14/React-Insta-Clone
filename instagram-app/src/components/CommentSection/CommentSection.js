@@ -1,5 +1,7 @@
 import React from 'react';
 import Comment from './Comment.js';
+import { FaEllipsisH } from 'react-icons/fa';
+
 
 class CommentSection extends React.Component {
     
@@ -52,11 +54,12 @@ class CommentSection extends React.Component {
                         text={comment.text} 
                     />
                 ))}
+                <p className="time" >TIME HERE</p>
                 <form onSubmit={this.addNewComment}>
                     <input onChange={this.handleChanges} name="comment" value={this.state.comment} type="text" placeholder="Add a comment..." />
+                    <FaEllipsisH className="ellipsis"/>
                 </form>           
                 
-                <p>time here</p>
             </div>
         )
     }
