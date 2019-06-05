@@ -15,7 +15,8 @@ class PostContainer extends React.Component {
     
     toggleLike = () => {
         this.setState({
-            liked: !this.state.liked
+            liked: !this.state.liked,
+            // numLikes: numLikes + 1
         })
     }
 
