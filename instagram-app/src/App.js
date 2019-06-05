@@ -4,6 +4,7 @@ import React from 'react';
 // import PostContainer from './components/PostContainer/PostContainer.js'
 import PostsPage from './components/PostContainer/PostsPage';
 import withAuthenticate from './components/authentication/withAuthenticate';
+import LoginPage from './components/Login/LoginPage';
 import './App.scss';
 
 
@@ -32,8 +33,8 @@ import './App.scss';
 //     )
 //   }
 // }
-
-const App = () => <PostsPage />
+const ComponentFromWithAuthenticate = withAuthenticate(PostsPage)(LoginPage);
+const App = () => <ComponentFromWithAuthenticate />
 
 
 export default App;
