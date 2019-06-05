@@ -9,16 +9,16 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // data: []
-      data: dummyData
+      data: []
+      // data: dummyData
     };
   }
 
-  // componentDidMount() {
-  //   this.setState({
-  //     data: dummyData
-  //   })
-  // }
+  componentDidMount() {
+    this.setState({
+      data: dummyData
+    })
+  }
 
   render() {
     return (
