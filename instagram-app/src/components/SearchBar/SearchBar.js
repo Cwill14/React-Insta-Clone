@@ -1,5 +1,4 @@
 import React from 'react';
-import './SearchBar.scss';
 import { FaInstagram } from 'react-icons/fa';
 import { FaRegHeart } from 'react-icons/fa';
 import { FaRegCompass } from 'react-icons/fa';
