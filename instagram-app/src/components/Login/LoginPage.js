@@ -21,9 +21,9 @@ class LoginPage extends React.Component {
         return (
             <div>
                 <h1>Login</h1>
-                <form onSubmit={e => this.login (e)}>
-                    <input type="username" name="username" value={this.state.username} required onChange={e => this.handleChanges (e)}/>
-                    <input type="password" name="password" value={this.state.password} required onChange={e => this.handleChanges (e)}/>
+                <form className="login-form" onSubmit={e => this.login (e)}>
+                    <input className="login-field" type="username" name="username" placeholder="username" value={this.state.username} required onChange={e => this.handleChanges (e)}/>
+                    <input className="login-field" type="password" name="password" placeholder="password" value={this.state.password} required onChange={e => this.handleChanges (e)}/>
                     <button>Login</button>
                 </form>
             </div>
