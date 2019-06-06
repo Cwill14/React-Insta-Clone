@@ -1,6 +1,4 @@
 import React from 'react';
-import PostsPage from '../PostContainer/PostsPage';
-import LoginPage from '../Login/LoginPage';
 
 const withAuthenticate = PostsPage => LoginPage =>
     class extends React.Component {
