@@ -12,12 +12,26 @@ class PostContainer extends React.Component {
         liked: false
     }
     
+    clickMethods = () => {
+        this.toggleLike();
+        this.increaseLikes();
+    }
+
     toggleLike = () => {
         this.setState({
             liked: !this.state.liked,
             // numLikes: numLikes + 1
         })
     }
+
+    increaseLikes = () => {
+        this.setState((prevState, props) => {
+            return {
+                likes: prevState.likes + 1
+            }
+        })
+    }
+
 
     render() {
         return (
@@ -29,7 +43,7 @@ class PostContainer extends React.Component {
                             <h2>{post.username}</h2>
                         </div>
                         <img className="main-img" src={post.imageUrl} alt="post" />
-                        {this.state.liked ? <FaHeart onClick={this.toggleLike} className="bottom-icons" /> : <FaRegHeart onClick={this.toggleLike} className="bottom-icons" />}
+                        {this.state.liked ? <FaHeart onClick={this.clickMethods} className="bottom-icons" /> : <FaRegHeart onClick={this.clickMethods} className="bottom-icons" />}
                         <FaRegComment className="bottom-icons"/>
                         <p><b>{post.likes} likes</b></p>
                         <CommentSection comments={post.comments} />

@@ -6,19 +6,34 @@ import { FaRegUser } from 'react-icons/fa';
 
 
 
-const SearchBar = props => {
-    return (
-        <div className="search-bar">
-            <FaInstagram className="bar-item icon" />
-            <div className="bar-item">
-                <h1>Instagram</h1>
+class SearchBar extends React.Component {
+    
+    handleChanges = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+
+    search = () => {
+        
+        // .filter()
+    }
+
+    render() {
+
+        return (
+            <div className="search-bar">
+                <FaInstagram className="bar-item icon" />
+                <div className="bar-item">
+                    <h1>Instagram</h1>
+                </div>
+                <input className="bar-item" type="text" placeholder="Search" onChange={this.handlechanges} onSubmit={this.search} />
+                <FaRegCompass className="bar-item icon" />
+                <FaRegHeart className="bar-item icon" />
+                <FaRegUser className="bar-item icon" />
             </div>
-            <input className="bar-item" type="text" placeholder="Search" />
-            <FaRegCompass className="bar-item icon" />
-            <FaRegHeart className="bar-item icon" />
-            <FaRegUser className="bar-item icon" />
-        </div>
-    )
+        )
+    }
 }
 
 export default SearchBar;

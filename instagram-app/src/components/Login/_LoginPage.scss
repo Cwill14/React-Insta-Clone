@@ -1,0 +1,14 @@
+@import './mixins.scss';
+
+.login-form {
+    @include flex(column, nowrap);
+    align-items: center;
+    // justify-content: space-evenly;
+    .login-field {
+        border: 1px solid black;
+    }
+    button {
+        max-width: 10rem;
+        margin-top: 1.5rem;
+    }
+}
