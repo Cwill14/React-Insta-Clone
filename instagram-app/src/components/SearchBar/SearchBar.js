@@ -1,15 +1,22 @@
 import React from 'react';
+import { FaInstagram } from 'react-icons/fa';
+import { FaRegHeart } from 'react-icons/fa';
+import { FaRegCompass } from 'react-icons/fa';
+import { FaRegUser } from 'react-icons/fa';
+
 
 
 const SearchBar = props => {
     return (
         <div className="search-bar">
-            <div>insta logo</div>
-            <h1>Instagram</h1>
-            <input type="text" placeholder="Search"/>
-            <div>compass icon</div>
-            <div>heart icon</div>
-            <div>profile icon</div>
+            <FaInstagram className="bar-item icon" />
+            <div className="bar-item">
+                <h1>Instagram</h1>
+            </div>
+            <input className="bar-item" type="text" placeholder="Search" />
+            <FaRegCompass className="bar-item icon" />
+            <FaRegHeart className="bar-item icon" />
+            <FaRegUser className="bar-item icon" />
         </div>
     )
 }

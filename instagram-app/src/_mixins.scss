@@ -1,0 +1,7 @@
+@mixin flex($direction, $wrap) {
+    display: flex;
+    flex-flow: $direction $wrap;
+}
+@mixin test-border() {
+    border: 1px dashed red;
+}
