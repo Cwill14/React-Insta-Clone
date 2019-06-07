@@ -1,55 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CommentSection from '../CommentSection/CommentSection.js';
-import { FaRegHeart } from 'react-icons/fa';
-import { FaHeart } from 'react-icons/fa';
-import { FaRegComment } from 'react-icons/fa';
-
+import Post from './Post';
+import { PostBox, PostStyle } from './PostContainerStyles';
 
 
 class PostContainer extends React.Component {
-    state = {
-        liked: false
-    }
-    
-    clickMethods = () => {
-        this.toggleLike();
-        this.increaseLikes();
-    }
-
-    toggleLike = () => {
-        this.setState({
-            liked: !this.state.liked,
-            // numLikes: numLikes + 1
-        })
-    }
-
-    increaseLikes = () => {
-        this.setState((prevState, props) => {
-            return {
-                likes: prevState.likes + 1
-            }
-        })
-    }
-
 
     render() {
         return (
-            <div className="post-box">
+            <PostBox>
                 {this.props.postData.map(post => (
-                    <div key={post.id} className="post">
-                        <div className="post-header">
-                            <img className="thumbnail" src={post.thumbnailUrl} alt="user thumbnail"/>                    
-                            <h2>{post.username}</h2>
-                        </div>
-                        <img className="main-img" src={post.imageUrl} alt="post" />
-                        {this.state.liked ? <FaHeart onClick={this.clickMethods} className="bottom-icons" /> : <FaRegHeart onClick={this.clickMethods} className="bottom-icons" />}
-                        <FaRegComment className="bottom-icons"/>
-                        <p><b>{post.likes} likes</b></p>
-                        <CommentSection comments={post.comments} />
-                    </div>
+                    <PostStyle key={post.id}>
+                        <Post post={post} />
+                    </PostStyle>
                 ))}
-            </div>    
+            </PostBox>    
         )
     }
 }

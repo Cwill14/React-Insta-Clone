@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
 import { FaInstagram } from 'react-icons/fa';
 import { FaRegHeart } from 'react-icons/fa';
 import { FaRegCompass } from 'react-icons/fa';
@@ -66,35 +66,26 @@ const BarHeader = styled(BarItem)`
     font-family: 'Pacifico', cursive;
 `;
 
-class SearchBar extends React.Component {
-    
-    handleChanges = (e) => {
-        this.setState({
-            [e.target.name]: e.target.value
-        })
-    }
-    search = () => {
-        // .filter()
-    }
-    render() {
-        return (
+const SearchBar = props => {
+    // console.log(props);
+    return (
             <SearchDiv>
                 <BarIcon><FaInstagram /></BarIcon>
                 <BarHeader><h1>Instagram</h1></BarHeader>
                 <BarInput>
                     <input 
                         type="text" 
+                        name="search"
                         placeholder="Search" 
-                        onChange={this.handlechanges} 
-                        onSubmit={this.search} 
+                        onChange={props.handleChanges} 
+                        // onSubmit={e => props.searchFn(e)}                      
                     />
                 </BarInput>
                 <BarIcon><FaRegCompass /></BarIcon>
                 <BarIcon><FaRegHeart /></BarIcon>
                 <BarIcon><FaRegUser /></BarIcon>
             </SearchDiv>
-        )
-    }
+    )
 }
 
 export default SearchBar;
