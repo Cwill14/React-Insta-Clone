@@ -1,32 +1,34 @@
-@import '../../mixins';
+// @import '../../mixins';
 
-.search-bar {
-    @include flex(row, nowrap);
-    // display: flex;
-    // height: 100px;
-    align-items: center;
-    justify-content: space-between;
-    // @include test-border;
-    .bar-item {
-        margin: 0 10px;
-        // @include test-border;
+// .search-bar {
+//     @include flex(row, nowrap);
+//     // display: flex;
+//     // height: 100px;
+//     align-items: center;
+//     justify-content: space-between;
+//     // @include test-border;
+//     .bar-item {
+//         margin: 0 10px;
+//         // @include test-border;
 
-        h1 {
-            border-left: 1px solid black;
-            padding: 0 5px 0 15px;
-            font-family: 'Pacifico', cursive;
-        }      
-    }
-    .icon {
-        height: 2rem;
-        width: 2rem;
-        // @include test-border;
-    }
-    input {
-        transform: scale(1.15);
-        text-align: center;
-        padding: 0.25rem 0;
-        border: 1px solid #CCC;
-        background-color: #EEE;
-    }
-}
+//         h1 {
+//             border-left: 1px solid black;
+//             padding: 0 5px 0 15px;
+//             font-family: 'Pacifico', cursive;
+//         }      
+//     }
+//     .icon {
+//         height: 2rem;
+//         width: 2rem;
+//         // @include test-border;
+//     }
+//     input {
+//         transform: scale(1.15);
+//         text-align: center;
+//         padding: 0.25rem 0;
+//         border: 1px solid #CCC;
+//         background-color: #EEE;
+//     }
+// }
+
+// ^Before Styled Component Refactoring^ 

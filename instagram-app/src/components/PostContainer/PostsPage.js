@@ -11,22 +11,40 @@ class PostsPage extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        data: []
-        // data: dummyData
+        posts: [],
+        search: '',
+        filteredPosts: []
       };
     }
   
     componentDidMount() {
       this.setState({
-        data: dummyData
+        posts: dummyData
       })
     }
-  
+    
+    handleChanges = e => {
+      this.setState({
+        
+        filteredPosts: this.state.posts.filter(post => post.username.includes(e.target.value) )
+
+      })
+      // console.log('handlechanges', this.state.search);
+
+    } 
+
+    // searchFn = e => {
+    //   e.preventDefault();
+    //   console.log('searchfn', this.state.search);
+    //   this.setState({
+    //   })
+    // }
+
     render() {
       return (
         <div>
-          <SearchBar />
-          <PostContainer postData={this.state.data} />
+          <SearchBar handleChanges={this.handleChanges} searchValue={this.state.search} /*searchFn={this.searchFn}*/ />
+          <PostContainer postData={this.state.filteredPosts > 0 ? this.state.filteredPosts : this.state.posts} />
         </div>
       )
     }
